@@ -1,21 +1,178 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<h1 fxLayoutAlign="center">{{title}}</h1>
 
-<router-outlet></router-outlet>
+<h2>Layout Children with 'layout-align'</h2>
+<p><strong>fxLayoutAlign</strong> aligns it's children.</p>
+<p>fxLayoutAlign="horizontal vertical"</p>
+<ul>
+  <li>[c c] => [center center]</li>
+  <li>[s s] => [start start]</li>
+  <li>[c s] => [center start]</li>
+  <li>[s c] => [start center]</li>
+  <li>[e e] => [end end]</li>
+</ul>
+<div class="colorNested">
+  <div class="blocksContainer"
+    fxLayout="row"
+    fxLayoutAlign="space-between "
+    fxFill
+    >
+    <div class="blocks red" fxLayoutAlign="center center">[c c]</div>
+    <div class="blocks green" fxLayoutAlign="start start">[s s]</div>
+    <div class="blocks yellow" fxLayoutAlign="start center">[s c]</div>
+    <div class="blocks purple" fxLayoutAlign="center start">[c s]</div>
+    <div class="blocks blue" fxLayoutAlign="end end">[e e]</div>
+  </div>
+</div>
+
+<h2>Layout Fill</h2>
+<p>Using <strong>fxFill</strong> to fill available width and height of parent container.</p>
+<div class="colorNested">
+  <div class="blocksContainer">
+    <div class="blocks green" fxFlex="20">A</div>
+    <div class="blocks blue" fxFlex>B</div>
+  </div>
+</div>
+
+<h2>Layout Gap</h2>
+<p>Using <strong>fxLayoutGap</strong> to create a grid-like layout</p>
+<div class="colorNested">
+  <div fxFill>
+    <div
+      fxFill
+      fxLayout="row wrap"
+      fxLayoutGap="10px grid"
+      >
+      <div fxFlex="25">
+        <div class="green" fxFill fxLayoutAlign="center center">A</div>
+      </div>
+      <div fxFlex="25">
+        <div class="yellow" fxFill fxLayoutAlign="center center">B</div>
+      </div>
+      <div fxFlex="25">
+        <div class="blue" fxFill fxLayoutAlign="center center">C</div>
+      </div>
+      <div fxFlex="25">
+        <div class="purple" fxFill fxLayoutAlign="center center">D</div>
+      </div>
+      <div fxFlex="25">
+        <div class="red" fxFill fxLayoutAlign="center center">D</div>
+      </div>
+      <div fxFlex="25">
+        <div class="blue" fxFill fxLayoutAlign="center center">E</div>
+      </div>
+      <div fxFlex="25">
+        <div class="yellow" fxFill fxLayoutAlign="center center">F</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>'Flex' to Fill Row</h2>
+<p>Simple row using <strong>"fxFlex"</strong> on 3rd element to fill avaiable main axis.</p>
+<div class="colorNested">
+  <div fxFill>
+    <div class="green" fxFlex="30">fxFlex="30"</div>
+    <div class="red" fxFlex="40">fxFlex="40"</div>
+    <div class="yellow" fxFlex>fxFlex</div>
+  </div>
+</div>
+
+<h2>'Flex' with Layout-Wrap</h2>
+<p>Using <strong>fxLayout="row wrap"</strong> to wrap positionsed items within a layout container</p>
+<div class="colorNested">
+  <div fxLayout="row wrap" fxFill>
+    <div fxFlex="30">
+      <div class="green" fxFill fxLayoutAlign="center center">fxFlex="30"</div>
+    </div>
+    <div fxFlex="45">
+      <div class="yellow" fxFill fxLayoutAlign="center center">fxFlex="45"</div>
+    </div>
+    <div fxFlex="20">
+      <div class="blue" fxFill fxLayoutAlign="center center">fxFlex="20"</div>
+    </div>
+    <div fxFlex="35">
+      <div class="purple" fxFill fxLayoutAlign="center center">fxFlex="35"</div>
+    </div>
+    <div fxFlex="65">
+      <div class="red" fxFill fxLayoutAlign="center center">fxFlex="65"</div>
+    </div>
+    <div fxFlex="50">
+      <div class="blue" fxFill fxLayoutAlign="center center">fxFlex="50"</div>
+    </div>
+    <div fxFlex>
+      <div class="yellow" fxFill fxLayoutAlign="center center">fxFlex</div>
+    </div>
+  </div>
+</div>
+
+<h2>Flex Attribute Values</h2>
+<p>Explore impact o non-numerical values for the <strong>fxFlex</strong>API</p>
+<div class="colorNested">
+  <div fxLayout="row wrap" fxFill>
+    <div fxFlex="none">
+      <div class="green" fxFill>fxFlex="none"</div>
+    </div>
+    <div fxFlex>
+      <div class="yellow" fxFill>fxFlex</div>
+    </div>
+    <div fxFlex="nogrow">
+      <div class="blue" fxFill>fxFlex="nogrow"</div>
+    </div>
+    <div fxFlex="grow">
+      <div class="red" fxFill>fxFlex="grow"</div>
+    </div>
+    <div fxFlex="initial">
+      <div class="green" fxFill>fxFlex="initial"</div>
+    </div>
+    <div fxFlex="auto">
+      <div class="blue" fxFill>fxFlex="auto"</div>
+    </div>
+    <div fxFlex="noshrink">
+      <div class="purple" fxFill>fxFlex="noshrink"</div>
+    </div>
+    <div fxFlex="0">
+      <div class="green" fxFill>fxFlex="0"</div>
+    </div>
+  </div>
+</div>
+
+<h2>Flex offset Values</h2>
+<p>Explore impact of values for the <strong>flex-offset</strong> API</p>
+<div class="colorNested">
+  <div fxFill>
+    <div fxFlex="70" fxFlexOffset="15">
+      <div class="purple" fxFill>
+        [fxFlex="66"] [fxFlexOffset="15"]
+      </div>
+    </div>
+    <div fxFlex>
+      <div class="green" fxFill>
+        fxFlex
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Flex with Algin-Self</h2>
+<p>Explore impact of <strong>fxFlexAlign</strong> API</p>
+<p><strong>fxFlexAlign</strong> aligns the element itself while <strong>fxLayoutAlign</strong> aligns its children.</p>
+<div class="colorNested">
+  <div fxFill fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex fxFlexAlign="start" class="blue">fxFlexAlign="start"</div>
+    <div fxFlex fxFlexAlign="center" class="green">fxFlexAlign="center"</div>
+    <div fxFlex fxFlexAlign="baseline" class="yellow">fxFlexAlign="baseline"</div>
+    <div fxFlex fxFlexAlign="end" class="red">fxFlexAlign="end"</div>
+    <div fxFlex fxFlexAlign="stretch" class="purple">fxFlexAlign = "stretch"</div>
+  </div>
+</div>
+
+<h2>Direction support for RTL</h2>
+<p>Simple row using layout gap and flex offset to demonstrate changes in layout direction between rtl and ltr.</p>
+<button (click)="toggleDirection(dir)">Toggle Direction</button>
+<div class="colorNested">
+  <div fxFill fxLayout="row" dir="{{dir}}">
+    <div class="green">A</div>
+    <div class="red">B</div>
+    <div class="blue">C</div>
+  </div>
+</div>

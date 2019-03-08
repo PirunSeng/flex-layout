@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'flex-layout';
+  dir = 'rtl';
+
+  toggleDirection(dir) {
+    this.dir = dir === 'rtl' ? 'ltr' : 'rtl'
+  }
 }
