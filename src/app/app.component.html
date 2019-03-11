@@ -1,5 +1,37 @@
 <h1 fxLayoutAlign="center">{{title}}</h1>
+<h1><u>CSS-TRICKS</u></h1>
+<ul class="flex-container">
+  <li class="flex-item">1</li>
+  <li class="flex-item">2</li>
+  <li class="flex-item">3</li>
+  <li class="flex-item">4</li>
+  <li class="flex-item">5</li>
+  <li class="flex-item">6</li>
+</ul>
 
+<h4>Navigation</h4>
+<ul class="navigation">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Products</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+<h4>Mobile-First</h4>
+<div class="wrapper">
+  <header class="header">Header</header>
+  <article class="main">
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+  </article>
+  <aside class="aside aside-1">Aside 1</aside>
+  <aside class="aside aside-2">Aside 2</aside>
+  <footer class="footer">Footer</footer>
+</div>
+
+<!-- Demos of Flex-Layout -->
+
+<hr>
+<h1><u>Demos</u></h1>
 <h2>Layout Children with 'layout-align'</h2>
 <p><strong>fxLayoutAlign</strong> aligns it's children.</p>
 <p>fxLayoutAlign="horizontal vertical"</p>
@@ -71,8 +103,8 @@
 <p>Simple row using <strong>"fxFlex"</strong> on 3rd element to fill avaiable main axis.</p>
 <div class="colorNested">
   <div fxFill>
-    <div class="green" fxFlex="30">fxFlex="30"</div>
-    <div class="red" fxFlex="40">fxFlex="40"</div>
+    <div class="green" fxFlex="30">fxFlex = "30"</div>
+    <div class="red" fxFlex="40">fxFlex = "40"</div>
     <div class="yellow" fxFlex>fxFlex</div>
   </div>
 </div>
@@ -82,22 +114,22 @@
 <div class="colorNested">
   <div fxLayout="row wrap" fxFill>
     <div fxFlex="30">
-      <div class="green" fxFill fxLayoutAlign="center center">fxFlex="30"</div>
+      <div class="green" fxFill fxLayoutAlign="center center">fxFlex = "30"</div>
     </div>
     <div fxFlex="45">
-      <div class="yellow" fxFill fxLayoutAlign="center center">fxFlex="45"</div>
+      <div class="yellow" fxFill fxLayoutAlign="center center">fxFlex = "45"</div>
     </div>
     <div fxFlex="20">
-      <div class="blue" fxFill fxLayoutAlign="center center">fxFlex="20"</div>
+      <div class="blue" fxFill fxLayoutAlign="center center">fxFlex = "20"</div>
     </div>
     <div fxFlex="35">
-      <div class="purple" fxFill fxLayoutAlign="center center">fxFlex="35"</div>
+      <div class="purple" fxFill fxLayoutAlign="center center">fxFlex = "35"</div>
     </div>
     <div fxFlex="65">
-      <div class="red" fxFill fxLayoutAlign="center center">fxFlex="65"</div>
+      <div class="red" fxFill fxLayoutAlign="center center">fxFlex = "65"</div>
     </div>
     <div fxFlex="50">
-      <div class="blue" fxFill fxLayoutAlign="center center">fxFlex="50"</div>
+      <div class="blue" fxFill fxLayoutAlign="center center">fxFlex = "50"</div>
     </div>
     <div fxFlex>
       <div class="yellow" fxFill fxLayoutAlign="center center">fxFlex</div>
@@ -110,28 +142,28 @@
 <div class="colorNested">
   <div fxLayout="row wrap" fxFill>
     <div fxFlex="none">
-      <div class="green" fxFill>fxFlex="none"</div>
+      <div class="green" fxFill>fxFlex = "none"</div>
     </div>
     <div fxFlex>
       <div class="yellow" fxFill>fxFlex</div>
     </div>
     <div fxFlex="nogrow">
-      <div class="blue" fxFill>fxFlex="nogrow"</div>
+      <div class="blue" fxFill>fxFlex = "nogrow"</div>
     </div>
     <div fxFlex="grow">
-      <div class="red" fxFill>fxFlex="grow"</div>
+      <div class="red" fxFill>fxFlex = "grow"</div>
     </div>
     <div fxFlex="initial">
-      <div class="green" fxFill>fxFlex="initial"</div>
+      <div class="green" fxFill>fxFlex = "initial"</div>
     </div>
     <div fxFlex="auto">
-      <div class="blue" fxFill>fxFlex="auto"</div>
+      <div class="blue" fxFill>fxFlex = "auto"</div>
     </div>
     <div fxFlex="noshrink">
-      <div class="purple" fxFill>fxFlex="noshrink"</div>
+      <div class="purple" fxFill>fxFlex = "noshrink"</div>
     </div>
     <div fxFlex="0">
-      <div class="green" fxFill>fxFlex="0"</div>
+      <div class="green" fxFill>fxFlex = "0"</div>
     </div>
   </div>
 </div>
@@ -175,4 +207,30 @@
     <div class="red">B</div>
     <div class="blue">C</div>
   </div>
+</div>
+
+<h2>Responsive API</h2>
+<div fxLayout='column' class="zero">
+  <div fxFlex="33" [fxFlex.md]="box1Width" class="one green" [ngStyle.sm]="{'color': 'red'}" [ngClass.sm]="{'yellow': 'hasStyle'}">Item 1</div>
+  <div fxFlex="33" [fxLayout]="direction" fxLayout.md="row" class="two yellow">
+    <div fxFlex="22"    fxFlex.md="10" fxHide.sm class="two_one blue">Item 2-1</div>
+    <div fxFlex="205px" fxFlex.md="65" class="two_two red">Item 2-2</div>
+    <div fxFlex="30px"  fxFlex.md="25" fxShow [fxHide.md]="hideBox" class="two_three purple">Item 2-3</div>
+  </div>
+  <div fxFlex class="three green">Item 3</div>
+</div>
+
+<h4>Breakpoint Activation Fallback Algorithm</h4>
+<div fxShow fxHide.xs="false" fxHide.lg="true">fxShow fxHide.xs="false" fxHide.lg="true"</div>
+
+<h2>Responsive style</h2>
+<strong>ngClass</strong>
+<div
+  class="default"
+  [ngClass]="['green']"
+  ngClass.xs="yellow"
+  ngClass.sm="green"
+  [ngClass.xs]="{'yellow':false, 'purple':true}"
+  [ngClass.sm]="{'green':false, 'red':true}" >
+      TESTING
 </div>
